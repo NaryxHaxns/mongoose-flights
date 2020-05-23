@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Detail</title>
+</head>
+<body>
+    <section>
+        <div>Airline: </div>
+        <div><%= flight.airline %></div>
+        <div>Airport: </div>
+        <div><%= flight.airport %></div>
+        <div>Flight Number: </div>
+        <div><%= flight.flightNo %></div>
+        <div>Departure: </div>
+        <div><%= flight.departs %></div>
+        <div>Destinations: </div>
+        <div><%= flight.destinations %></div>
+    </section>
+    <label>Airport:
+        <select name="airport">
+            <option value="AUS">AUS</option>
+            <option value="DFW">DFW</option>
+            <option value="DEN">DEN</option>
+            <option value="LAX">LAX</option>
+            <option value="SAN">SAN</option>
+        </select>
+    </label><br>
+    <label>Departs:
+        <input type="datetime-local" name="departs">
+    </label><br>
+</body>
+</html>
