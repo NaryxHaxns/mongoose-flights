@@ -6,6 +6,7 @@
     <title>Flight Detail</title>
 </head>
 <body>
+    <h1>Flight Detail</h1>
     <section>
         <div>Airline: </div>
         <div><%= flight.airline %></div>
@@ -16,19 +17,44 @@
         <div>Departure: </div>
         <div><%= flight.departs %></div>
         <div>Destinations: </div>
-        <div><%= flight.destinations %></div>
-    </section>
-    <label>Airport:
-        <select name="airport">
-            <option value="AUS">AUS</option>
-            <option value="DFW">DFW</option>
-            <option value="DEN">DEN</option>
-            <option value="LAX">LAX</option>
-            <option value="SAN">SAN</option>
-        </select>
-    </label><br>
-    <label>Departs:
-        <input type="datetime-local" name="departs">
-    </label><br>
+        <div>
+            <% if (flight.destinations.length) { %>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Airport:</th>
+                        <th>Arrival:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% flight.destinations.forEach(function(d) { %>
+                            <tr>
+                                <td><%= d.airport %></td>
+                                <td><%= d.arrival %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <h5>No Connections</h5>
+            <% }; %>
+        </div>
+    </section><br>
+    <h1>Add a Destination</h1>
+    <form method="POST" action="/flights/<%= flight._id %>/destinations">
+        <label>Airport:
+            <select name="airport">
+                <option value="AUS">AUS</option>
+                <option value="DFW">DFW</option>
+                <option value="DEN">DEN</option>
+                <option value="LAX">LAX</option>
+                <option value="SAN">SAN</option>
+            </select>
+        </label><br>
+        <label>Arrival:
+            <input type="datetime-local" name="arrival">
+        </label><br>
+        <input type="submit" value="Add Destination">
+    </form>
 </body>
 </html>

@@ -22,7 +22,7 @@ function create(req,res) {
 
 function index(req,res) {
     Flight.find({}, function(err,flights) {
-        res.render('flights/index', {flights});
+        res.render('flights/index', { flights });
     });
 };
 
