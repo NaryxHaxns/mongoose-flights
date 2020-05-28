@@ -7,5 +7,26 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  background-color: rgba(107,138,169,0.5);
+  padding: 10px;
+}
+
+#logo {
+  height: 70px;
+  border-radius: 5px;
+}
+
+main {
+  
+  padding: 10px;
+  background: linear-gradient(rgb(126,180,207),rgb(171,138,87),rgb(92,91,24));
 }

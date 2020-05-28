@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
-<h1>Flight Detail</h1>
+<main>
+    <h1>Flight Detail</h1>
     <section>
         <div>Airline: </div>
         <div><%= flight.airline %></div>
@@ -34,7 +35,7 @@
             <% }; %>
         </div>
         <div>
-            <a href="/flights/<%= flight._id %>/tickets/add">Add Ticket</a>
+            <a href="/flights/<%= flight._id %>/tickets/add"><input type="submit" value="Add Ticket"></a>
             <table>
                 <thead>
                     <tr>
@@ -69,5 +70,6 @@
         </label><br>
         <input type="submit" value="Add Destination">
     </form>
+</main>
 
 <%- include('../partials/footer') %>
