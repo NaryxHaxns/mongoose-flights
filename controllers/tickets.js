@@ -8,20 +8,17 @@ module.exports = {
 }
 
 function add(req,res) {
-    res.render('/tickets/add');
+    res.render('tickets/addTicket', { title: 'Mongoose Airlines', flightId: req.params.id });
 };
 
 function create(req,res) {
-    Ticket.create(req.body, function(err,ticket) {
-        res.redirect('/tickets/new')
-    });
+    const newTicket = {seat: req.body.seat, price: req.body.price, flight: req.params.id}
+    Ticket.create(newTicket);
+    res.redirect(`/flights/${req.params.id}`)
 };
 
 function addToFlight(req,res) {
-    Flight.findById(req.params.id, function(err,flight) {
-        flight.tickets.push(req.body);
-        flight.save(function(err) {
-            res.redirect(`flights/${flight._id}`);
+    Ticket.findById(req.params.id, function(err,flight) {
+            res.render('tickets/addTicket', {tickets});
         });
-    });
 };

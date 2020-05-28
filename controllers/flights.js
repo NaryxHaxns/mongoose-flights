@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function add(req,res) {
-    res.render('flights/add');
+    res.render('flights/add', { title: 'Mongoose Airlines' });
 };
 
 function create(req,res) {
@@ -23,14 +23,14 @@ function create(req,res) {
 
 function index(req,res) {
     Flight.find({}, function(err,flights) {
-        res.render('flights/index', { flights });
+        res.render('flights/index', { title: 'Mongoose Airlines', flights });
     });
 };
 
 function show(req,res) {
     Flight.findById(req.params.id, function(err, flight) {
         Ticket.find({flight: flight._id}, function(err,tickets){
-            res.render('flights/show', { flight, tickets })
+            res.render('flights/show', { title: 'Mongoose Airlines', flight, tickets })
         })
     });
 };
