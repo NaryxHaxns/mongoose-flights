@@ -56,7 +56,7 @@
     </section><br>
     <h1>Add a Destination</h1>
     <form method="POST" action="/flights/<%= flight._id %>/destinations">
-        <label class="destHeads">Airport:
+        <label class="addHeads">Airport:
             <select name="airport">
                 <option value="AUS">AUS</option>
                 <option value="DFW">DFW</option>
@@ -65,7 +65,7 @@
                 <option value="SAN">SAN</option>
             </select>
         </label><br>
-        <label class="destHeads">Arrival:
+        <label class="addHeads">Arrival:
             <input type="datetime-local" name="arrival">
         </label><br>
         <input type="submit" value="Add Destination">

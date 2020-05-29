@@ -29,6 +29,15 @@ a:hover {
   font-size: 20px;
 }
 
+#tagDiv {
+  text-align: center;
+}
+
+#tagline {
+  display: inline-block;
+  width: 245px;
+}
+
 nav {
   background-color: rgba(107,138,169,0.5);
   padding: 10px;
@@ -40,7 +49,6 @@ nav {
 }
 
 main {
-  
   padding: 10px;
   background: linear-gradient(rgba(126,180,207,0.85),rgba(171,138,87,0.85),rgba(92,91,24,0.85));
 }
@@ -49,7 +57,12 @@ main {
   font-weight: bold;
 }
 
-.destHeads {
+.addHeads {
   background-color: rgb(126,180,207);
   padding: 4px;
+}
+
+#homeDiv {
+  padding: 10px;
+  text-align: center;
 }

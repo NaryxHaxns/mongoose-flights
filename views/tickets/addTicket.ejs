@@ -3,10 +3,10 @@
 <main>
     <h1>Add a Ticket</h1>
     <form action="/flights/<%= flightId %>/tickets" method="POST">
-        <label>Seat Number:
+        <label class="addHeads">Seat Number:
             <input type="text" name="seat">
         </label><br>
-        <label>Price:
+        <label class="addHeads">Price:
             <input type="text" name="price">
         </label><br>
         <input type="submit" value="Add Ticket">
